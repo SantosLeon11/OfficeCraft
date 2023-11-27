@@ -58,7 +58,7 @@ namespace OfficeCraft.Services.Service
                 };
 
                 var result = await _context.Pedidos.AddAsync(request);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
 
                 return request;
             }

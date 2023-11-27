@@ -66,25 +66,21 @@ namespace OfficeCraft.Migrations
                     Cantidad = table.Column<int>(type: "int", nullable: false),
                     FechaPedido = table.Column<DateTime>(type: "datetime2", nullable: false),
                     FkCliente = table.Column<int>(type: "int", nullable: true),
-                    ClientesPkCliente = table.Column<int>(type: "int", nullable: false),
-                    FkProducto = table.Column<int>(type: "int", nullable: true),
-                    ProductosPkProducto = table.Column<int>(type: "int", nullable: false)
+                    FkProducto = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pedidos", x => x.PkPedido);
                     table.ForeignKey(
-                        name: "FK_Pedidos_Clientes_ClientesPkCliente",
-                        column: x => x.ClientesPkCliente,
+                        name: "FK_Pedidos_Clientes_FkCliente",
+                        column: x => x.FkCliente,
                         principalTable: "Clientes",
-                        principalColumn: "PkCliente",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "PkCliente");
                     table.ForeignKey(
-                        name: "FK_Pedidos_Productos_ProductosPkProducto",
-                        column: x => x.ProductosPkProducto,
+                        name: "FK_Pedidos_Productos_FkProducto",
+                        column: x => x.FkProducto,
                         principalTable: "Productos",
-                        principalColumn: "PkProducto",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "PkProducto");
                 });
 
             migrationBuilder.CreateTable(
@@ -124,14 +120,14 @@ namespace OfficeCraft.Migrations
                 values: new object[] { 1, "Sosa", "1234", 1, "Maria Jose", "Majo" });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pedidos_ClientesPkCliente",
+                name: "IX_Pedidos_FkCliente",
                 table: "Pedidos",
-                column: "ClientesPkCliente");
+                column: "FkCliente");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pedidos_ProductosPkProducto",
+                name: "IX_Pedidos_FkProducto",
                 table: "Pedidos",
-                column: "ProductosPkProducto");
+                column: "FkProducto");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Usuarios_FkRol",

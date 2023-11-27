@@ -62,9 +62,6 @@ namespace OfficeCraft.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
-                    b.Property<int>("ClientesPkCliente")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("FechaPedido")
                         .HasColumnType("datetime2");
 
@@ -74,14 +71,11 @@ namespace OfficeCraft.Migrations
                     b.Property<int?>("FkProducto")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductosPkProducto")
-                        .HasColumnType("int");
-
                     b.HasKey("PkPedido");
 
-                    b.HasIndex("ClientesPkCliente");
+                    b.HasIndex("FkCliente");
 
-                    b.HasIndex("ProductosPkProducto");
+                    b.HasIndex("FkProducto");
 
                     b.ToTable("Pedidos");
                 });
@@ -187,15 +181,11 @@ namespace OfficeCraft.Migrations
                 {
                     b.HasOne("OfficeCraft.Models.Entities.Cliente", "Clientes")
                         .WithMany()
-                        .HasForeignKey("ClientesPkCliente")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FkCliente");
 
                     b.HasOne("OfficeCraft.Models.Entities.Producto", "Productos")
                         .WithMany()
-                        .HasForeignKey("ProductosPkProducto")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FkProducto");
 
                     b.Navigation("Clientes");
 
