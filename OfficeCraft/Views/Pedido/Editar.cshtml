@@ -1,0 +1,56 @@
+﻿@model OfficeCraft.Models.Entities.Pedido
+@{
+    Layout = "_LayoutDashboard";
+}
+<div class="container-fluid">
+    <div class="col-sm-8">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Editar pedidos</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="Editar" method="post">
+
+
+                    @*Id del articulo oculto*@
+
+                    <input type="hidden" asp-for="PkPedido" />
+
+                    <div class="form-group">
+                        <label asp-for="Cantidad" class="control-label"></label>
+                        <input asp-for="Cantidad" class="form-control" placeholder="Ingresa la cantidad" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FechaPedido" class="control-label"></label>
+                        <input asp-for="FechaPedido" class="form-control" placeholder="Fecha" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Cliente</label>
+                        <select asp-for="FkCliente" asp-items="ViewBag.Cliente" class="select2-placeholder-multiple form-control">
+                            <option value="">-- Selecciona --</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Producto</label>
+                        <select asp-for="FkProducto" asp-items="ViewBag.Producto" class="select2-placeholder-multiple form-control">
+                            <option value="">-- Selecciona --</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-secondary d-block mx-auto"><i class="bi bi-person-fill"></i> Guardar</button>
+                    </div>
+
+                </form>
+
+                <a asp-controller="Pedido" asp-action="Index">Volver</a>s
+            </div>
+        </div>
+    </div>
+</div>

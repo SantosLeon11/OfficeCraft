@@ -1,0 +1,40 @@
+﻿@model OfficeCraft.Models.Entities.Producto
+@{
+    Layout = "_LayoutDashboard";
+}
+<div class="container-fluid">
+    <div class="col-sm-8">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Crear producto</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="Crear" method="post">
+
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" placeholder="Ingresa el nombre del producto" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Precio" class="control-label"></label>
+                        <input asp-for="Precio" class="form-control" placeholder="Ingresa el precio" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Existencia" class="control-label"></label>
+                        <input asp-for="Existencia" class="form-control" placeholder="Ingresa la existencia" required />
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-secondary d-block mx-auto"><i class="bi bi-person-fill"></i> Guardar</button>
+                    </div>
+                </form>
+                <a asp-controller="Producto" asp-action="Index">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>

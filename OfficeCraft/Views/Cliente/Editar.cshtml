@@ -1,0 +1,52 @@
+﻿@model OfficeCraft.Models.Entities.Cliente
+@{
+    Layout = "_LayoutDashboard";
+}
+<div class="container-fluid">
+    <div class="col-sm-8">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Editar clientes</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="Editar" method="post">
+
+
+                    @*Id del articulo oculto*@
+
+                    <input type="hidden" asp-for="PkCliente" />
+
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" placeholder="Cambiar de nombre es delito" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Apellido" class="control-label"></label>
+                        <input asp-for="Apellido" class="form-control" placeholder="Cambiar de nombre es delito" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Direccion" class="control-label"></label>
+                        <input asp-for="Direccion" class="form-control" placeholder="Ingresa tu nueva direccion" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Correo" class="control-label"></label>
+                        <input asp-for="Correo" class="form-control" placeholder="Ingresa tu nuevo Correo" required />
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-secondary d-block mx-auto"><i class="bi bi-person-fill"></i> Guardar</button>
+                    </div>
+
+                </form>
+
+                <a asp-controller="Cliente" asp-action="Index">Volver</a>s
+            </div>
+        </div>
+    </div>
+</div>
