@@ -98,6 +98,10 @@ namespace OfficeCraft.Migrations
                     b.Property<int>("Precio")
                         .HasColumnType("int");
 
+                    b.Property<string>("UrlImagenPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("PkProducto");
 
                     b.ToTable("Productos");

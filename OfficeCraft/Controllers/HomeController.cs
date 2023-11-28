@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OfficeCraft.Context;
 using OfficeCraft.Models;
+using OfficeCraft.Services.IService;
 using System.Diagnostics;
 
 namespace OfficeCraft.Controllers
@@ -7,15 +9,19 @@ namespace OfficeCraft.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IProductoServices _productoServices;
+        private readonly ApplicationDbContext _context;
+        public HomeController(ILogger<HomeController> logger,IProductoServices productoServices, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
+            _productoServices= productoServices;
         }
-
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var response = await _productoServices.GetProducto();
+            return View(response);
         }
 
         public IActionResult Privacy()

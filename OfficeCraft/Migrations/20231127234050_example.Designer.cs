@@ -12,7 +12,7 @@ using OfficeCraft.Context;
 namespace OfficeCraft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231127183741_example")]
+    [Migration("20231127234050_example")]
     partial class example
     {
         /// <inheritdoc />
@@ -100,6 +100,10 @@ namespace OfficeCraft.Migrations
 
                     b.Property<int>("Precio")
                         .HasColumnType("int");
+
+                    b.Property<string>("UrlImagenPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PkProducto");
 

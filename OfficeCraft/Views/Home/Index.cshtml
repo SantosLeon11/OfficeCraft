@@ -1,220 +1,24 @@
-﻿@{
+﻿@model IEnumerable<OfficeCraft.Models.Entities.Producto>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-    <div class="categorias">
-        <div class="div">
-            @*<header class="header">
-                <div class="overlap-group">
-                    <img class="logo" src="img/logo.png" />
-                    <div class="text-wrapper">Inicio</div>
-                    <div class="text-wrapper-2">Servicios</div>
-                    <div class="text-wrapper-3">Categorias</div>
-                    <img class="search" src="img/search.png" />
-                    <img class="carrito" src="img/carrito.png" />
-                </div>
-            </header>*@
-            <div class="banner-OC">
-                <div class="overlap"><div class="text-wrapper-4">Categorias</div></div>
-            </div>
-            <div class="group">
-                <img class="img" src="img/group-4.png" />
-                <div class="overlap-group-wrapper">
-                    <div class="overlap-group-2">
-                        <div class="text-wrapper-5">Search</div>
-                        <img class="image" src="img/image-5.png" />
-                    </div>
-                </div>
-            </div>
-            <div class="overlap-wrapper">
-                <div class="overlap-2">
-                    <div class="text-wrapper-6">Estudiantes</div>
-                    <img class="image-2" src="img/image-13.png" />
-                </div>
-            </div>
-            <div class="div-wrapper">
-                <div class="overlap-3">
-                    <div class="text-wrapper-7">Oficina</div>
-                    <img class="image-3" src="img/image-14.png" />
-                </div>
-            </div>
-            <div class="group-2">
-                <div class="text-wrapper-8">Personal</div>
-                <img class="image-4" src="img/image-16.png" />
-            </div>
-            <img class="separador" src="img/separador.svg" />
-            <footer class="footer">
-                <div class="overlap-4">
-                    <div class="overlap-group-3">
-                        <p class="p">©2024 OfficeCraft Papelerías. Todos los derechos reservados.</p>
-                    </div>
-                    <div class="horario">
-                        <div class="horario-2">
-                            <div class="s-bado-domingo">Sábado &amp; Domingo:<br />Cerrado</div>
-                            <img class="vector" src="img/vector-2.svg" />
-                        </div>
-                        <div class="horario-3">
-                            <p class="lunes-viernes">Lunes &amp; Viernes:<br />8:30am - 9:00pm</p>
-                            <img class="vector" src="img/vector.svg" />
-                        </div>
-                        <div class="text-wrapper-9">Horario</div>
-                    </div>
-                    <div class="texto">
-                        <div class="text-wrapper-10">Ubicación</div>
-                        <div class="text-wrapper-11">Contacto</div>
-                        <div class="text-wrapper-12">Servicios</div>
-                    </div>
-                    <img class="icons" src="img/icons.png" />
-                    <img class="logo-officecraft" src="img/logo-2-officecraft.png" />
-                </div>
-            </footer>
-            <div class="text-wrapper-13">Productos más populares</div>
-            <div class="group-3">
-                <div class="group-4">
-                    <div class="overlap-5">
-                        <div class="group-5">
-                            <div class="overlap-group-4"><div class="text-wrapper-14">útiles escolares</div></div>
-                        </div>
-                        <div class="text-wrapper-15">Código: 1234511</div>
-                        <p class="text-wrapper-16">Pegamento blanco top 40 Grs c/12</p>
-                        <div class="group-6">
-                            <div class="overlap-6"><div class="text-wrapper-17">Comprar</div></div>
-                        </div>
-                        <div class="image-wrapper"><img class="image-5" src="img/image-18-6.png" /></div>
-                        <img class="line" src="img/image.svg" />
-                        <img class="image-6" src="img/image-24.png" />
-                    </div>
-                </div>
-                <div class="group-7">
-                    <div class="overlap-5">
-                        <div class="group-5">
-                            <div class="overlap-group-4"><div class="text-wrapper-14">útiles escolares</div></div>
-                        </div>
-                        <div class="text-wrapper-15">Código: 1234513</div>
-                        <p class="text-wrapper-16">Paquete con 4 lapices de grafito de la marca evolution</p>
-                        <div class="group-6">
-                            <div class="overlap-6"><div class="text-wrapper-17">Comprar</div></div>
-                        </div>
-                        <div class="image-wrapper"><img class="image-5" src="img/image-18-2.png" /></div>
-                        <img class="line" src="img/line-1-5.svg" />
-                        <img class="image-7" src="img/image-22.png" />
-                    </div>
-                </div>
-                <div class="group-8">
-                    <div class="overlap-5">
-                        <div class="group-5">
-                            <div class="overlap-group-4"><div class="text-wrapper-14">útiles escolares</div></div>
-                        </div>
-                        <div class="text-wrapper-15">Código: 1234512</div>
-                        <p class="text-wrapper-16">Tijeras Multi-Propósito Scotch™, 15.24 cm, 36/Caja | 3M México</p>
-                        <div class="group-6">
-                            <div class="overlap-6"><div class="text-wrapper-17">Comprar</div></div>
-                        </div>
-                        <div class="image-wrapper"><img class="image-5" src="img/image-18-5.png" /></div>
-                        <img class="line" src="img/line-1-2.svg" />
-                        <img class="image-8" src="img/image-23.png" />
-                    </div>
-                </div>
-                <div class="group-9">
-                    <div class="overlap-5">
-                        <div class="group-5">
-                            <div class="overlap-group-4"><div class="text-wrapper-14">útiles escolares</div></div>
-                        </div>
-                        <div class="overlap-7">
-                            <div class="overlap-8">
-                                <div class="text-wrapper-18">Código: 1234510</div>
-                                <img class="image-9" src="img/image-25.png" />
-                            </div>
-                            <p class="text-wrapper-19">Libreta scribe con 200 hojas de cuadro pequeño</p>
-                        </div>
-                        <div class="group-6">
-                            <div class="overlap-6"><div class="text-wrapper-17">Comprar</div></div>
-                        </div>
-                        <div class="image-wrapper"><img class="image-5" src="img/image.png" /></div>
-                        <img class="line" src="img/line-1-3.svg" />
-                    </div>
-                </div>
-                <div class="circulos">
-                    <div class="ellipse"></div>
-                    <div class="ellipse-2"></div>
-                    <div class="ellipse-3"></div>
-                </div>
-            </div>
-            <div class="slider-prueba">
-                <div class="group-9">
-                    <div class="overlap-5">
-                        <img class="image-10" src="img/image-17.png" />
-                        <div class="group-5">
-                            <div class="overlap-group-4"><div class="text-wrapper-14">útiles escolares</div></div>
-                        </div>
-                        <div class="text-wrapper-15">Código: 123456</div>
-                        <p class="text-wrapper-16">Papel bond tamaño carta color blanco con 500 hojas</p>
-                        <div class="group-6">
-                            <div class="overlap-6"><div class="text-wrapper-17">Comprar</div></div>
-                        </div>
-                        <div class="image-wrapper"><img class="image-5" src="img/image-18-4.png" /></div>
-                        <img class="line" src="img/line-1.svg" />
-                    </div>
-                </div>
-                <div class="group-4">
-                    <div class="overlap-5">
-                        <div class="group-5">
-                            <div class="overlap-group-4"><div class="text-wrapper-14">útiles escolares</div></div>
-                        </div>
-                        <div class="text-wrapper-15">Código: 123457</div>
-                        <p class="text-wrapper-16">Papel bond tamaño carta de varios colores con 500 hojas</p>
-                        <div class="group-6">
-                            <div class="overlap-6"><div class="text-wrapper-17">Comprar</div></div>
-                        </div>
-                        <div class="image-wrapper"><img class="image-5" src="img/image-18-3.png" /></div>
-                        <img class="line" src="img/line-1-6.svg" />
-                        <img class="image-11" src="img/image-19.png" />
-                    </div>
-                </div>
-                <div class="group-8">
-                    <div class="overlap-5">
-                        <div class="group-5">
-                            <div class="overlap-group-4"><div class="text-wrapper-14">útiles escolares</div></div>
-                        </div>
-                        <div class="text-wrapper-15">Código: 123458</div>
-                        <p class="text-wrapper-16">Cartulina de 50 x 65cm de color blanco</p>
-                        <div class="group-6">
-                            <div class="overlap-6"><div class="text-wrapper-17">Comprar</div></div>
-                        </div>
-                        <div class="image-wrapper"><img class="image-5" src="img/image-18.png" /></div>
-                        <img class="line" src="img/line-1-4.svg" />
-                        <img class="image-12" src="img/image-20.png" />
-                    </div>
-                </div>
-                <div class="group-10">
-                    <div class="overlap-5">
-                        <div class="group-5">
-                            <div class="overlap-group-4"><div class="text-wrapper-14">útiles escolares</div></div>
-                        </div>
-                        <div class="text-wrapper-15">Código: 123459</div>
-                        <p class="text-wrapper-16">Sacapuntas de plastico doble barrilito con deposito y goma</p>
-                        <div class="group-6">
-                            <div class="overlap-6"><div class="text-wrapper-17">Comprar</div></div>
-                        </div>
-                        <div class="image-wrapper"><img class="image-5" src="img/image-18-7.png" /></div>
-                        <img class="line" src="img/line-1-7.svg" />
-                        <img class="image-13" src="img/image-21.png" />
-                    </div>
-                </div>
-                <div class="group-11">
-                    <div class="ellipse-4"></div>
-                    <div class="ellipse-5"></div>
-                    <div class="ellipse-6"></div>
-                </div>
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach (var Item in Model)
+            {
+             <div class="col">
+                 <div class="card shadow-sm">
+                     <img src="/@Html.DisplayFor(x => Item.UrlImagenPath)" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                     <div class="card-body">
+                         <h5 class="card-title">@Html.DisplayFor(x => Item.Nombre)</h5>
+                         <p class="card-text"> @Html.DisplayFor(x => Item.Precio) </p>
+                         <a href="#" class="btn btn-primary">Go somewhere</a>
+                     </div>
+                 </div>
+             </div>
+            }
             </div>
         </div>
     </div>
-</body>
-</html>
