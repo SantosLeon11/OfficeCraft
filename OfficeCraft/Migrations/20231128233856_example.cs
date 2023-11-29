@@ -37,7 +37,8 @@ namespace OfficeCraft.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Precio = table.Column<int>(type: "int", nullable: false),
-                    Existencia = table.Column<int>(type: "int", nullable: false)
+                    Existencia = table.Column<int>(type: "int", nullable: false),
+                    UrlImagenPath = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
