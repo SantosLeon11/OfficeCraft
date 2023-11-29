@@ -20,7 +20,7 @@ namespace OfficeCraft.Services.Service
             try
             {
 
-                return await _context.Pedidos.ToListAsync();
+                return await _context.Pedidos.Include(y => y.Clientes).Include(y => y.Productos).ToListAsync();
 
             }
             catch (Exception ex)

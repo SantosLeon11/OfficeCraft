@@ -54,7 +54,7 @@ namespace OfficeCraft.Services.Service
             try
             {
                 var urlImagen = i.Img.FileName;
-                i.UrlImagenPath = @"Img/articulos/" + urlImagen;
+                i.UrlImagenPath = @"Img/productos/" + urlImagen;
                 Producto request = new Producto()
                 {
                     Nombre = i.Nombre,
@@ -62,6 +62,7 @@ namespace OfficeCraft.Services.Service
                     Existencia = i.Existencia,
                     UrlImagenPath = i.UrlImagenPath,
                 };
+                SubirImg(urlImagen);
 
                 var result = await _context.Productos.AddAsync(request);
                 _context.SaveChanges();
