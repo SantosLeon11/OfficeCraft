@@ -32,8 +32,8 @@
                                     <th> @Html.DisplayNameFor(x => x.PkPedido)</th>
                                     <th> @Html.DisplayNameFor(x => x.Cantidad)</th>
                                     <th> @Html.DisplayNameFor(x => x.FechaPedido)</th>
-                                    <th> Cliente</th>
-                                    <th> Producto</th>
+                                    <th> @Html.DisplayNameFor(x => x.FkCliente)</th>
+                                    <th> @Html.DisplayNameFor(x => x.FkProducto)</th>
 
                                     <th> Acciones</th>
                                 </tr>
@@ -47,10 +47,10 @@
                                 {
                                     <tr>
                                         <td> <span>@(i++)</span></td>
-                                        <td> @Html.DisplayFor(x => Item.Cantidad)</td>
-                                        <td> @Html.DisplayFor(x => Item.FechaPedido)</td>
-                                        <td> @Html.DisplayFor(x => Item.Clientes.Nombre)</td>
-                                        <td> @Html.DisplayFor(x => Item.Productos.Nombre)</td>
+                                        <td> @Html.DisplayFor(x => Item.Cantidad )</td>
+                                        <td> @Html.DisplayFor(x => Item.FechaPedido )</td>
+                                        <td> @Html.DisplayFor(x => Item.FkCliente )</td>
+                                        <td> @Html.DisplayFor(x => Item.FkProducto )</td>
 
                                         <td>
                                             <a class="btn btn-primary" asp-action="Editar" asp-route-id=@Item.PkPedido><i class="fa-regular fa-pen-to-square"></i> Editar</a>

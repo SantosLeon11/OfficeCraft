@@ -20,7 +20,6 @@ builder.Services.AddTransient<IPedidoServices, PedidoServices>();
 builder.Services.AddTransient<IClienteServices, ClienteServices>();
 builder.Services.AddTransient<IUsuarioServices, UsuarioServices>();
 builder.Services.AddTransient<IRolServices, RolServices>();
-builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
