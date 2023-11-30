@@ -21,7 +21,7 @@ namespace OfficeCraft.Services.Service
             try
             {
 
-                return await _context.Usuarios.Include(y => y.Roles).ToListAsync();
+                return await _context.Usuarios.ToListAsync();
 
             }
             catch (Exception ex)

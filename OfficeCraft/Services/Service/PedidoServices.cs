@@ -20,7 +20,7 @@ namespace OfficeCraft.Services.Service
             try
             {
 
-                return await _context.Pedidos.Include(y => y.Clientes).Include(y => y.Productos).ToListAsync();
+                return await _context.Pedidos.ToListAsync();
 
             }
             catch (Exception ex)
@@ -58,7 +58,7 @@ namespace OfficeCraft.Services.Service
                 };
 
                 var result = await _context.Pedidos.AddAsync(request);
-                await _context.SaveChangesAsync();
+                _context.SaveChanges();
 
                 return request;
             }
