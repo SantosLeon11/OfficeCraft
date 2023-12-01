@@ -21,10 +21,10 @@ namespace OfficeCraft.Services.Service
         {
             try
             {
-                //return await _context.Roles.ToListAsync();
-                var response = await _context.Database.GetDbConnection().QueryAsync<Rol>("sp_GetRoles", new { }, commandType: CommandType.StoredProcedure);
+                return await _context.Roles.ToListAsync();
+                //var response = await _context.Database.GetDbConnection().QueryAsync<Rol>("sp_GetRoles", new { }, commandType: CommandType.StoredProcedure);
 
-                return response.ToList();
+                //return response.ToList();
             }
             catch (Exception ex)
             {

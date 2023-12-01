@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - OfficeCraft</title>
+    <link rel="icon" href="@Url.Content("~/img/FavIcon.ico")" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/OfficeCraft.styles.css" asp-append-version="true" />
@@ -34,11 +35,40 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    @*<footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - OfficeCraft - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>*@
+    <div class="footer">
+        <div class="derechos-de-autor">
+            <div class="overlap-group">
+                <p class="text-wrapper">©2024 OfficeCraft Papelerías. Todos los derechos reservados.</p>
+            </div>
+        </div>
+        <div class="texto">
+            <div class="div">clientes@officecraft.com.mx</div>
+            <div class="text-wrapper-2">+52 998-142-5314</div>
+            <div class="text-wrapper-3">Contáctanos</div>
+        </div>
+        <div class="sguenos">
+            <div class="icons">
+                <img class="twiter" src="img/tw.jpg" alt="Twitter" />
+                <div class="mail">
+                    <div class="overlap-group-2">
+                        <div class="ellipse"></div>
+                        <img class="img" src="img/email.jpg" alt="Email" />
+                    </div>
+                </div>
+                <img class="whats-app" src="img/ws.jpg" alt="WhatsApp" />
+                <img class="FB" src="img/fb.jpg" alt="Facebook" />
+            </div>
+            <div class="text-wrapper-4">Síguenos</div>
+        </div>
+        <img class="logo-officecraft" src="img/FavIcon.png" alt="OfficeCraft Logo" />
+    </div>
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
