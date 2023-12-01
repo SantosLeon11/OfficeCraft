@@ -901,7 +901,7 @@ body {
 
     .footer .overlap {
         width: auto;
-        position:static;
+        position:absolute;
         height: 183px;
     }
 
