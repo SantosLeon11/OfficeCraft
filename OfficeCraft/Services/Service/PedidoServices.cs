@@ -14,7 +14,6 @@ namespace OfficeCraft.Services.Service
         {
             _context = context;
         }
-
         public async Task<List<Pedido>> GetPedido()
         {
             try
