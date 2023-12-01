@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace OfficeCraft.Migrations
 {
     /// <inheritdoc />
-    public partial class OfficeCraftRepo : Migration
+    public partial class example : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -112,23 +112,6 @@ namespace OfficeCraft.Migrations
                 {
                     { 1, "Sosa", "majo@gmail.com", "Maria" },
                     { 2, "Madrazo", "gino@gmail.com", "Gino" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Productos",
-                columns: new[] { "PkProducto", "Existencia", "Nombre", "Precio", "UrlImagenPath" },
-                values: new object[,]
-                {
-                    { 1, 100, "Calculadora Casio Azul", 1150, "" },
-                    { 2, 100, "Calculadora Casio Rosa", 1150, "" },
-                    { 3, 100, "Mochila Chenson Negra", 250, "img/productos/3" },
-                    { 4, 100, "Mochila Chenson Pastel", 250, "img/productos/4" },
-                    { 5, 100, "Colores Norma 50pz", 450, "img/productos/5" },
-                    { 6, 100, "Colores Norma 36pz", 250, "img/productos/6" },
-                    { 7, 100, "Libreta Norma Cuadros Grandes Ferrari", 90, "img/productos/7" },
-                    { 8, 100, "Libreta Kiut Cuadros Grandes Pink", 90, "img/productos/8" },
-                    { 9, 100, "Kit de Geometria Color Morado", 50, "img/productos/9" },
-                    { 10, 100, "Kit de Geometria Color Azul", 50, "img/productos/10" }
                 });
 
             migrationBuilder.InsertData(
