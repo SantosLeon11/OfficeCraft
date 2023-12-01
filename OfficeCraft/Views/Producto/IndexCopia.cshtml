@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<OfficeCraft.Models.Entities.Producto>
 
 @{
-    Layout = "_LayoutDashboard";
+    Layout = "_LayoutDashboardCopia";
 }
 
 <h1>Gestion de productos</h1>
@@ -48,7 +48,6 @@
                                         <td> @Html.DisplayFor(x => Item.Nombre )</td>
                                         <td> @Html.DisplayFor(x => Item.Precio )</td>
                                         <td> @Html.DisplayFor(x => Item.Existencia )</td>
-
                                     </tr>
                                 }
                             </tbody>

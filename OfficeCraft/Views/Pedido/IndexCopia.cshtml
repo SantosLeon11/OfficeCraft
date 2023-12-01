@@ -1,0 +1,71 @@
+﻿@model IEnumerable<OfficeCraft.Models.Entities.Pedido>
+
+@{
+    Layout = "_LayoutDashboardCopia";
+}
+
+<h1>Gestion de Pedidos</h1>
+
+<div class="row">
+    <div class="offset-10 colborder-4 mb-4">
+        <a asp-action="Crear" asp-controller="Pedido" class="btn btn-success"><i class="fa-solid fa-plus"></i> Nuevo</a>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Lista de pedidos</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+
+                    @if (Model.Count() > 0)
+                    {
+
+                        <table class="table table-bordered" id="tblPedido" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th> @Html.DisplayNameFor(x => x.PkPedido)</th>
+                                    <th> @Html.DisplayNameFor(x => x.Cantidad)</th>
+                                    <th> @Html.DisplayNameFor(x => x.FechaPedido)</th>
+                                    <th> Cliente</th>
+                                    <th> Producto</th>
+
+                                    <th> Acciones</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @{
+                                    int i = 1;
+                                }
+                                @foreach (var Item in Model)
+                                {
+                                    <tr>
+                                        <td> <span>@(i++)</span></td>
+                                        <td> @Html.DisplayFor(x => Item.Cantidad)</td>
+                                        <td> @Html.DisplayFor(x => Item.FechaPedido)</td>
+                                        <td> @Html.DisplayFor(x => Item.Clientes.Nombre)</td>
+                                        <td> @Html.DisplayFor(x => Item.Productos.Nombre)</td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+
+                    }
+                    else
+                    {
+                        <p>No hay registros</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dapper;
+using Microsoft.EntityFrameworkCore;
 using OfficeCraft.Context;
 using OfficeCraft.Models.Entities;
 using OfficeCraft.Services.IService;
+using System.Data;
 
 namespace OfficeCraft.Services.Service
 {
@@ -23,8 +25,10 @@ namespace OfficeCraft.Services.Service
         {
             try
             {
+                //return await _context.Productos.ToListAsync();
+                var response = await _context.Database.GetDbConnection().QueryAsync<Producto>("sp_GetProductos", new { }, commandType: CommandType.StoredProcedure);
 
-                return await _context.Productos.ToListAsync();
+                return response.ToList();
 
             }
             catch (Exception ex)
@@ -84,6 +88,8 @@ namespace OfficeCraft.Services.Service
                 producto.Nombre = i.Nombre;
                 producto.Precio = i.Precio;
                 producto.Existencia = i.Existencia;
+                producto.Img = i.Img;
+                producto.UrlImagenPath = i.UrlImagenPath;
 
                 _context.Entry(producto).State = EntityState.Modified;
                 await _context.SaveChangesAsync();

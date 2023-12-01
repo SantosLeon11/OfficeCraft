@@ -13,9 +13,7 @@ namespace OfficeCraft.Services.Service
         public UsuarioServices(ApplicationDbContext context)
         {
             _context = context;
-
         }
-
         public async Task<List<Usuario>> GetUsuarios()
         {
             try

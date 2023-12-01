@@ -12,8 +12,8 @@ using OfficeCraft.Context;
 namespace OfficeCraft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231201003731_example")]
-    partial class example
+    [Migration("20231201025941_OfficeCraftRepo")]
+    partial class OfficeCraftRepo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,10 +41,6 @@ namespace OfficeCraft.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Direccion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -52,6 +48,22 @@ namespace OfficeCraft.Migrations
                     b.HasKey("PkCliente");
 
                     b.ToTable("Clientes");
+
+                    b.HasData(
+                        new
+                        {
+                            PkCliente = 1,
+                            Apellido = "Sosa",
+                            Correo = "majo@gmail.com",
+                            Nombre = "Maria"
+                        },
+                        new
+                        {
+                            PkCliente = 2,
+                            Apellido = "Madrazo",
+                            Correo = "gino@gmail.com",
+                            Nombre = "Gino"
+                        });
                 });
 
             modelBuilder.Entity("OfficeCraft.Models.Entities.Pedido", b =>
@@ -108,6 +120,88 @@ namespace OfficeCraft.Migrations
                     b.HasKey("PkProducto");
 
                     b.ToTable("Productos");
+
+                    b.HasData(
+                        new
+                        {
+                            PkProducto = 1,
+                            Existencia = 100,
+                            Nombre = "Calculadora Casio Azul",
+                            Precio = 1150,
+                            UrlImagenPath = ""
+                        },
+                        new
+                        {
+                            PkProducto = 2,
+                            Existencia = 100,
+                            Nombre = "Calculadora Casio Rosa",
+                            Precio = 1150,
+                            UrlImagenPath = ""
+                        },
+                        new
+                        {
+                            PkProducto = 3,
+                            Existencia = 100,
+                            Nombre = "Mochila Chenson Negra",
+                            Precio = 250,
+                            UrlImagenPath = "img/productos/3"
+                        },
+                        new
+                        {
+                            PkProducto = 4,
+                            Existencia = 100,
+                            Nombre = "Mochila Chenson Pastel",
+                            Precio = 250,
+                            UrlImagenPath = "img/productos/4"
+                        },
+                        new
+                        {
+                            PkProducto = 5,
+                            Existencia = 100,
+                            Nombre = "Colores Norma 50pz",
+                            Precio = 450,
+                            UrlImagenPath = "img/productos/5"
+                        },
+                        new
+                        {
+                            PkProducto = 6,
+                            Existencia = 100,
+                            Nombre = "Colores Norma 36pz",
+                            Precio = 250,
+                            UrlImagenPath = "img/productos/6"
+                        },
+                        new
+                        {
+                            PkProducto = 7,
+                            Existencia = 100,
+                            Nombre = "Libreta Norma Cuadros Grandes Ferrari",
+                            Precio = 90,
+                            UrlImagenPath = "img/productos/7"
+                        },
+                        new
+                        {
+                            PkProducto = 8,
+                            Existencia = 100,
+                            Nombre = "Libreta Kiut Cuadros Grandes Pink",
+                            Precio = 90,
+                            UrlImagenPath = "img/productos/8"
+                        },
+                        new
+                        {
+                            PkProducto = 9,
+                            Existencia = 100,
+                            Nombre = "Kit de Geometria Color Morado",
+                            Precio = 50,
+                            UrlImagenPath = "img/productos/9"
+                        },
+                        new
+                        {
+                            PkProducto = 10,
+                            Existencia = 100,
+                            Nombre = "Kit de Geometria Color Azul",
+                            Precio = 50,
+                            UrlImagenPath = "img/productos/10"
+                        });
                 });
 
             modelBuilder.Entity("OfficeCraft.Models.Entities.Rol", b =>
@@ -135,7 +229,7 @@ namespace OfficeCraft.Migrations
                         new
                         {
                             PkRoles = 2,
-                            Nombre = "sa"
+                            Nombre = "empleado"
                         });
                 });
 
@@ -176,11 +270,20 @@ namespace OfficeCraft.Migrations
                         new
                         {
                             PKUsuario = 1,
-                            Apellido = "Sosa",
+                            Apellido = "Santos",
                             Contraseña = "1234",
                             FkRol = 1,
-                            Nombre = "Maria Jose",
-                            NombreUsuario = "Majo"
+                            Nombre = "Jorge",
+                            NombreUsuario = "joge"
+                        },
+                        new
+                        {
+                            PKUsuario = 2,
+                            Apellido = "Peña",
+                            Contraseña = "1234",
+                            FkRol = 2,
+                            Nombre = "David",
+                            NombreUsuario = "davi"
                         });
                 });
 
