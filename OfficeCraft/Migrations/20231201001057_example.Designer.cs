@@ -12,8 +12,8 @@ using OfficeCraft.Context;
 namespace OfficeCraft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231130205516_OfficeCraft")]
-    partial class OfficeCraft
+    [Migration("20231201001057_example")]
+    partial class example
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -108,24 +108,6 @@ namespace OfficeCraft.Migrations
                     b.HasKey("PkProducto");
 
                     b.ToTable("Productos");
-
-                    b.HasData(
-                        new
-                        {
-                            PkProducto = 1,
-                            Existencia = 100,
-                            Nombre = "Lapicero",
-                            Precio = 10,
-                            UrlImagenPath = "Img/productos/"
-                        },
-                        new
-                        {
-                            PkProducto = 2,
-                            Existencia = 100,
-                            Nombre = "Libro",
-                            Precio = 60,
-                            UrlImagenPath = "Img/productos/"
-                        });
                 });
 
             modelBuilder.Entity("OfficeCraft.Models.Entities.Rol", b =>
@@ -153,7 +135,7 @@ namespace OfficeCraft.Migrations
                         new
                         {
                             PkRoles = 2,
-                            Nombre = "empleado"
+                            Nombre = "sa"
                         });
                 });
 
@@ -194,20 +176,11 @@ namespace OfficeCraft.Migrations
                         new
                         {
                             PKUsuario = 1,
-                            Apellido = "Santos",
+                            Apellido = "Sosa",
                             Contraseña = "1234",
                             FkRol = 1,
-                            Nombre = "Jorge",
-                            NombreUsuario = "joge"
-                        },
-                        new
-                        {
-                            PKUsuario = 2,
-                            Apellido = "Peña",
-                            Contraseña = "1234",
-                            FkRol = 2,
-                            Nombre = "David",
-                            NombreUsuario = "davi"
+                            Nombre = "Maria Jose",
+                            NombreUsuario = "Majo"
                         });
                 });
 

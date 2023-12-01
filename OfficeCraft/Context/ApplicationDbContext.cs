@@ -28,9 +28,9 @@ namespace OfficeCraft.Context
                 new Rol
                 {
                     PkRoles = 2,
-                    Nombre = "empleado"
-                }
-            );
+                    Nombre = "sa"
+                });
+
 
             //Insert en la tabla usuario
 
@@ -38,22 +38,13 @@ namespace OfficeCraft.Context
                 new Usuario
                 {
                     PKUsuario = 1,
-                    Nombre = "Jorge",
-                    Apellido = "Santos",
-                    NombreUsuario = "joge",
+                    Nombre = "Maria Jose",
+                    Apellido = "Sosa",
+                    NombreUsuario = "Majo",
                     Contraseña = "1234",
                     FkRol = 1
-                },
-                new Usuario
-                {
-                    PKUsuario = 2,
-                    Nombre = "David",
-                    Apellido = "Peña",
-                    NombreUsuario = "davi",
-                    Contraseña = "1234",
-                    FkRol = 2
-                }
-            );
+
+                });
         }
     }
 }
