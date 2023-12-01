@@ -1,0 +1,100 @@
+﻿@model IEnumerable<OfficeCraft.Models.Entities.Producto>
+
+@{
+    Layout = "_LayoutDashboard";
+}
+
+<h1>Gestion de productos</h1>
+
+<div class="row">
+    <div class="offset-10 colborder-4 mb-4">
+        <a asp-action="Crear" asp-controller="Producto" class="btn btn-success"><i class="fa-solid fa-plus"></i> Nuevo</a>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Lista de productos</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+
+                    @if (Model.Count() > 0)
+                    {
+
+                        <table class="table table-bordered" id="tblProducto" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th> @Html.DisplayNameFor(x => x.PkProducto)</th>
+                                    <th> @Html.DisplayNameFor(x => x.Nombre)</th>
+                                    <th> @Html.DisplayNameFor(x => x.Precio)</th>
+                                    <th> @Html.DisplayNameFor(x => x.Existencia)</th>
+
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @{
+                                    int i = 1;
+                                }
+                                @foreach (var Item in Model)
+                                {
+                                    <tr>
+                                        <td> <span>@(i++)</span></td>
+                                        <td> @Html.DisplayFor(x => Item.Nombre )</td>
+                                        <td> @Html.DisplayFor(x => Item.Precio )</td>
+                                        <td> @Html.DisplayFor(x => Item.Existencia )</td>
+
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+
+                    }
+                    else
+                    {
+                        <p>No hay registros</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            //Llamar a datatable
+            $('#tblProducto').DataTable({
+                language: {
+                    "decimal": "",
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando START a END de TOTAL Entradas",
+                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                    "infoFiltered": "(Filtrado de MAX total entradas)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar MENU Entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                }
+            });
+        });
+    </script>
+}

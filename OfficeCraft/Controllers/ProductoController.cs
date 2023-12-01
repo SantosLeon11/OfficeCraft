@@ -29,6 +29,22 @@ namespace OfficeCraft.Controllers
                 throw new Exception("Succedio un error" + ex.Message);
             }
         }
+        [HttpGet]
+        //Se retorna la vista "index" de la respectiva carpeta
+        public async Task<IActionResult> IndexCopia()
+        {
+            try
+            {
+                return View(await _productoServices.GetProducto());
+
+                /*var response = await _articuloServices.GetArticulos();
+                return View(response);*/
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Succedio un error" + ex.Message);
+            }
+        }
 
         [HttpGet]
         public IActionResult Crear()
