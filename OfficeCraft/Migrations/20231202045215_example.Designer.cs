@@ -12,7 +12,7 @@ using OfficeCraft.Context;
 namespace OfficeCraft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231201170912_example")]
+    [Migration("20231202045215_example")]
     partial class example
     {
         /// <inheritdoc />
@@ -64,6 +64,27 @@ namespace OfficeCraft.Migrations
                             Correo = "gino@gmail.com",
                             Nombre = "Gino"
                         });
+                });
+
+            modelBuilder.Entity("OfficeCraft.Models.Entities.Oferta", b =>
+                {
+                    b.Property<int>("PkOferta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PkOferta"));
+
+                    b.Property<int>("Descuento")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FkProducto")
+                        .HasColumnType("int");
+
+                    b.HasKey("PkOferta");
+
+                    b.HasIndex("FkProducto");
+
+                    b.ToTable("Ofertas");
                 });
 
             modelBuilder.Entity("OfficeCraft.Models.Entities.Pedido", b =>
@@ -203,6 +224,15 @@ namespace OfficeCraft.Migrations
                             Nombre = "David",
                             NombreUsuario = "davi"
                         });
+                });
+
+            modelBuilder.Entity("OfficeCraft.Models.Entities.Oferta", b =>
+                {
+                    b.HasOne("OfficeCraft.Models.Entities.Producto", "Productos")
+                        .WithMany()
+                        .HasForeignKey("FkProducto");
+
+                    b.Navigation("Productos");
                 });
 
             modelBuilder.Entity("OfficeCraft.Models.Entities.Pedido", b =>

@@ -63,6 +63,27 @@ namespace OfficeCraft.Migrations
                         });
                 });
 
+            modelBuilder.Entity("OfficeCraft.Models.Entities.Oferta", b =>
+                {
+                    b.Property<int>("PkOferta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PkOferta"));
+
+                    b.Property<int>("Descuento")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FkProducto")
+                        .HasColumnType("int");
+
+                    b.HasKey("PkOferta");
+
+                    b.HasIndex("FkProducto");
+
+                    b.ToTable("Ofertas");
+                });
+
             modelBuilder.Entity("OfficeCraft.Models.Entities.Pedido", b =>
                 {
                     b.Property<int>("PkPedido")
@@ -200,6 +221,15 @@ namespace OfficeCraft.Migrations
                             Nombre = "David",
                             NombreUsuario = "davi"
                         });
+                });
+
+            modelBuilder.Entity("OfficeCraft.Models.Entities.Oferta", b =>
+                {
+                    b.HasOne("OfficeCraft.Models.Entities.Producto", "Productos")
+                        .WithMany()
+                        .HasForeignKey("FkProducto");
+
+                    b.Navigation("Productos");
                 });
 
             modelBuilder.Entity("OfficeCraft.Models.Entities.Pedido", b =>

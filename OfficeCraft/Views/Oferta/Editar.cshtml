@@ -1,0 +1,44 @@
+﻿@model OfficeCraft.Models.Entities.Oferta
+@{
+    Layout = "_LayoutDashboard";
+}
+<div class="container-fluid">
+    <div class="col-sm-8">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Editar oferta</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="Editar" method="post">
+
+
+                    @*Id del articulo oculto*@
+
+                    <input type="hidden" asp-for="PkOferta" />
+
+                    <div class="form-group">
+                        <label asp-for="Descuento" class="control-label"></label>
+                        <input asp-for="Descuento" class="form-control" placeholder="Editar descuento" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Producto</label>
+                        <select asp-for="FkProducto" asp-items="ViewBag.Productos" class="select2-placeholder-multiple form-control">
+                            <option value="">-- Selecciona --</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-secondary d-block mx-auto"><i class="bi bi-person-fill"></i> Guardar</button>
+                    </div>
+
+                </form>
+
+                <a asp-controller="Oferta" asp-action="Index">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
