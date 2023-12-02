@@ -14,6 +14,7 @@ namespace OfficeCraft.Context
         public virtual DbSet<Rol> Roles { get; set; }
         public virtual DbSet<Pedido> Pedidos { get; set; }
         public virtual DbSet<Producto> Productos { get; set; }
+        public virtual DbSet<Oferta> Ofertas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

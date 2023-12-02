@@ -58,6 +58,25 @@ namespace OfficeCraft.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Ofertas",
+                columns: table => new
+                {
+                    PkOferta = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Descuento = table.Column<int>(type: "int", nullable: false),
+                    FkProducto = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Ofertas", x => x.PkOferta);
+                    table.ForeignKey(
+                        name: "FK_Ofertas_Productos_FkProducto",
+                        column: x => x.FkProducto,
+                        principalTable: "Productos",
+                        principalColumn: "PkProducto");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Pedidos",
                 columns: table => new
                 {
@@ -133,6 +152,11 @@ namespace OfficeCraft.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Ofertas_FkProducto",
+                table: "Ofertas",
+                column: "FkProducto");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Pedidos_FkCliente",
                 table: "Pedidos",
                 column: "FkCliente");
@@ -151,6 +175,9 @@ namespace OfficeCraft.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Ofertas");
+
             migrationBuilder.DropTable(
                 name: "Pedidos");
 
