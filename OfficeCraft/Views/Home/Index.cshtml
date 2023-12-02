@@ -3,49 +3,35 @@
     ViewData["Title"] = "Home Page";
 }
 <link href="~/img/FavIcon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="stylesheet" href="globals.css" />
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <img src="~/img/BannerOC.png" />
 <div class="album py-5 bg-body-tertiary">
-    <div class="container">
+    <div class="container productos">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             @foreach (var Item in Model)
             {
-             <div class="col">
-                 <div class="card shadow-sm">
-                     <img src="/@Html.DisplayFor(x => Item.UrlImagenPath)" class="bd-placeholder-img card-img-top" width="100%" height="225" />
-                     <div class="card-body">
-                         <h5 class="card-title">@Html.DisplayFor(x => Item.Nombre)</h5>
-                         <p class="card-text"> @Html.DisplayFor(x => Item.Precio) </p>
-                         <a href="#" class="btn btn-primary">Go somewhere</a>
-                     </div>
-                 </div>
-             </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="/@Html.DisplayFor(x => Item.UrlImagenPath)" class="bd-placeholder-img card-img-top" width="100%" height="225" />
+                        @*<form asp-action="Crear" method="post">*@
+                        <div class="card-body bodyproducto">
+
+                            <h5 class="card-title">@Html.DisplayFor(x => Item.Nombre)</h5>
+                            <p class="card-text precio"> $@Html.DisplayFor(x => Item.Precio).00 </p>
+                            @*<a href="#" class="btn btn-primary">Agregar al carrito</a>*@
+                            <div class="row row-cols-sm-2 ">
+                                <div class="form-group">
+                                    <label class="control-label"></label>
+                                    <input class="form-control cantproducto" placeholder="Cantidad" required />
+                                </div>
+                                <button class="botoncarrito"><div class="EFECTO"><svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.15051 1.42594H3.30619L4.41595 5.37044L5.00521 7.75996V7.76597L5.73195 10.7138C5.73195 10.7198 5.73686 10.7258 5.73686 10.7318L6.18371 12.539H6.01185C5.12306 12.539 4.40122 13.4216 4.40122 14.5082C4.40122 15.5949 5.12306 16.4775 6.01185 16.4775H6.81225C6.67476 16.7597 6.59128 17.0899 6.59128 17.4381C6.59128 18.4648 7.27383 19.2993 8.11352 19.2993C8.9532 19.2993 9.63576 18.4648 9.63576 17.4381C9.63576 17.0839 9.55719 16.7597 9.41479 16.4775H12.3365C12.199 16.7597 12.1155 17.0899 12.1155 17.4381C12.1155 18.4648 12.7981 19.2993 13.6378 19.2993C14.4775 19.2993 15.16 18.4648 15.16 17.4381C15.16 17.0839 15.0814 16.7597 14.939 16.4775H15.6019C15.8033 16.4775 15.9702 16.2734 15.9702 16.0272C15.9702 15.7811 15.8033 15.5769 15.6019 15.5769H6.00694C5.52572 15.5769 5.13288 15.0966 5.13288 14.5082C5.13288 13.9199 5.52572 13.4396 6.00694 13.4396H6.67476H8.58983H12.8619H14.777C14.939 13.4396 15.0814 13.3075 15.1305 13.1214L15.7198 10.7318C15.7198 10.7258 15.7198 10.7258 15.7198 10.7198L17.0407 5.36444C17.0751 5.22635 17.0554 5.08226 16.9818 4.96819C16.9081 4.85412 16.805 4.78807 16.6872 4.78807H14.0797C14.0797 4.78807 14.0797 4.78807 14.0748 4.78807H10.721H7.36713H7.36222H5.01994L3.91018 0.837566C3.86107 0.657452 3.71867 0.531372 3.56154 0.531372H1.15051C0.949182 0.531372 0.782227 0.735502 0.782227 0.981658C0.782227 1.22781 0.949182 1.42594 1.15051 1.42594ZM8.89919 17.4321C8.89919 17.9604 8.54564 18.3927 8.11352 18.3927C7.6814 18.3927 7.32785 17.9604 7.32785 17.4321C7.32785 16.9038 7.6814 16.4715 8.11352 16.4715C8.54564 16.4715 8.89919 16.9038 8.89919 17.4321ZM14.4283 17.4321C14.4283 17.9604 14.0748 18.3927 13.6427 18.3927C13.2106 18.3927 12.857 17.9604 12.857 17.4321C12.857 16.9038 13.2106 16.4715 13.6427 16.4715C14.0748 16.4715 14.4283 16.9038 14.4283 17.4321ZM15.1011 10.1315H13.6918L14.0159 8.07816H15.6069L15.1011 10.1315ZM12.9405 10.1315H11.0991V8.07816H13.2695L12.9405 10.1315ZM11.0991 12.533V11.032H12.7981L12.5624 12.533H11.0991ZM8.89919 12.533L8.66349 11.032H10.3625V12.533H8.89919ZM6.58146 11.032H7.91219L8.14789 12.533H6.94974L6.58146 11.032ZM11.0991 7.17759V5.67664H13.6476L13.4119 7.17759H11.0991ZM10.3625 7.17759H8.04968L7.81398 5.67664H10.3625V7.17759ZM10.3625 8.07816V10.1315H8.52109L8.197 8.07816H10.3625ZM7.76979 10.1315H6.36049L5.85471 8.07816H7.4457L7.76979 10.1315ZM14.5118 12.533H13.3137L13.5494 11.032H14.8801L14.5118 12.533ZM15.8327 7.17759H14.1632L14.3989 5.67664H16.201L15.8327 7.17759ZM7.06268 5.67664L7.29838 7.17759H5.62883L5.26055 5.67664H7.06268Z" fill="white" /></svg></div></button>
+                            </div>
+                        </div>
+                        @*</form>*@
+                    </div>
+                </div>
             }
-            </div>
         </div>
     </div>
-<footer class="footer">
-          <div class="overlap-8">
-            <div class="overlap-group-4">
-              <p class="text-wrapper-15">©2024 OfficeCraft Papelerías. Todos los derechos reservados.</p>
-            </div>
-            <div class="horario">
-              <div class="horario-2">
-                <div class="s-bado-domingo">Sábado &amp; Domingo:<br />Cerrado</div>
-                <img class="vector" src="img/vector.svg" />
-              </div>
-              <div class="horario-3">
-                <p class="lunes-viernes">Lunes &amp; Viernes:<br />8:30am - 9:00pm</p>
-                <img class="vector" src="img/vector-2.svg" />
-              </div>
-              <div class="text-wrapper-16">Horario</div>
-            </div>
-            <div class="texto">
-              <div class="text-wrapper-17">Ubicación</div>
-              <div class="text-wrapper-18">Contacto</div>
-              <div class="text-wrapper-19">Servicios</div>
-            </div>
-            <img class="icons" src="img/icons.png" />
-            <img class="logo-officecraft" src="img/logo-2-officecraft.png" />
-          </div>
-        </footer>
+</div>

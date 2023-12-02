@@ -15,9 +15,8 @@
 <div class="container-fluid">
     <div class="offset-12">
         <div class="card border">
-            <div class="card-header bg-dark">
+            <div class="card-header ">
                 <h1 class="text-white"><strong>Lista de productos</strong></h1>
-
             </div>
 
             <div class="card-body">
@@ -106,7 +105,6 @@
         $('.eliminar-producto').on('click', function () {
             //if (confirm('¿Estás seguro de que deseas eliminar este artículo?')) {}
 
-
             Swal.fire({
                 title: "Esta seguro que deseas borrar?",
                 text: "No podrás revertir esto.!",
@@ -132,7 +130,6 @@
                                 location.reload(); // Recarga la página completa
                                 //window.location.href = "/Articulos/Index";
                             }
-
                         }
                     });
                     Swal.fire({

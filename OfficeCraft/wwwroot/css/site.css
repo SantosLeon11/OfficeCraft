@@ -1,7 +1,9 @@
 html {
   font-size: 14px;
 }
-
+main {
+    margin-bottom: 150px; /* Agrega un margen inferior grande para dar espacio al footer */
+}
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -27,7 +29,7 @@ body {
     .categorias .div {
         background-color: #ffffff;
         overflow: hidden;
-        width: 1366px;
+        width: auto;
         height: 2086.01px;
         position: relative;
     }
@@ -43,7 +45,7 @@ body {
 
     .categorias .overlap-group {
         position: relative;
-        width: 1366px;
+        width: auto;
         height: 80px;
         background-color: #ffd700;
     }
@@ -122,7 +124,7 @@ body {
 
     .categorias .overlap {
         position: relative;
-        width: 1366px;
+        width: auto;
         height: 457px;
         left: -1px;
         background-image: url(./img/spiderman.jpg);
@@ -310,7 +312,7 @@ body {
 
     .categorias .separador {
         position: absolute;
-        width: 1366px;
+        width: auto;
         height: 1px;
         top: 1030px;
         left: 0;
@@ -319,7 +321,7 @@ body {
 
     .categorias .footer {
         position: absolute;
-        width: 1366px;
+        width: auto;
         height: 183px;
         top: 1903px;
         left: 1px;
@@ -328,7 +330,7 @@ body {
 
     .categorias .overlap-4 {
         position: relative;
-        width: 1364px;
+        width: auto;
         height: 183px;
         background-image: url(./img/background.svg);
         background-size: 100% 100%;
@@ -893,4 +895,372 @@ body {
 }
 .box-shadow[b-ibsrb12lq7] {
     background-color: #FFD700 !important;
+}
+.footer {
+    width: 100%;
+    max-width: 1980px;
+    height: 180px;
+    background-color: #ffd700;
+    position: fixed;
+    align-content:center;
+    padding: 20px;
+    padding-top: 40px;
+    position: fixed;
+    margin: 0 auto;
+}
+    
+.footer .derechos-de-autor {
+    position: absolute;
+    width: 100%;
+    height: 34px;
+    top: 149px;
+    left: 1px;
+    text-align: center;
+}
+
+.footer .overlap-group {
+    position: relative;
+    width: 100%;
+    height: 34px;
+    background-color: #ff4040;
+}
+
+.footer .text-wrapper {
+    position: absolute;
+    top: 9px;
+    left: 526px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.footer .texto {
+    position: absolute;
+    width: 256px;
+    height: 89px;
+    top: 29px;
+    left: 1021px;
+}
+
+.footer .div {
+    position: absolute;
+    width: 250px;
+    top: 67px;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.footer .text-wrapper-2 {
+    position: absolute;
+    width: 184px;
+    top: 40px;
+    left: 33px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.footer .text-wrapper-3 {
+    position: absolute;
+    width: 243px;
+    top: 0;
+    left: 3px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.footer .sguenos {
+    position: absolute;
+    width: 323px;
+    height: 90px;
+    top: 29px;
+    left: 522px;
+}
+
+    .footer .icons {
+        position: absolute;
+        width: 321px;
+        height: 50px;
+        top: 40px;
+        left: 0;
+    }
+.icons {
+    position: absolute;
+    width: 321px;
+    height: 50px;
+    top: 40px;
+    left: 0;
+    border-radius: 50% !important;
+}
+
+.footer .twiter {
+    position: absolute;
+    width: 52px;
+    height: 51px;
+    top: 0;
+    left: 270px;
+    border-radius:50%;
+}
+
+    .footer .mail {
+        position: absolute;
+        width: 51px;
+        height: 50px;
+        top: 0;
+        left: 0;
+    }
+.footer .img {
+    object-fit: cover;
+    position: absolute;
+    width: 51px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+    .footer .whatsapp {
+        position: absolute;
+        width: 51px;
+        height: 50px;
+        top: 0;
+        left: 90px;
+        border-radius: 50%;
+    }
+
+    .footer .FB {
+        position: absolute;
+        width: 51px;
+        height: 50px;
+        top: 0;
+        left: 180px;
+        border-radius: 50%;
+    }
+
+.footer .overlap-group-2 {
+    position: relative;
+    height: 50px;
+}
+
+.footer .ellipse {
+    position: absolute;
+    width: 41px;
+    height: 40px;
+    top: 5px;
+    left: 5px;
+    background-color: #ffffff;
+    border-radius: 20.5px/20px;
+}
+
+
+
+    
+
+.footer .text-wrapper-4 {
+    position: absolute;
+    width: 320px;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.footer .logo-officecraft {
+    position: absolute;
+    width: 131px;
+    height: 121px;
+    top: 16px;
+    left: 184px;
+    object-fit: cover;
+}
+/* Media query para hacer ajustes específicos en pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
+    .footer {
+        padding: 10px;
+    }
+    /* Ajustes adicionales según sea necesario para dispositivos más pequeños */
+}
+
+
+.card-header {
+    background-color: #AD0007;
+}
+
+.EFECTO {
+    /position: relative;
+    / margin-top: 5px;
+    width: 68px;
+    height: 28px;
+    background-color: #ad0007;
+    border-radius: 50px;
+}
+
+    .EFECTO .layer {
+        position: absolute;
+        width: 16px;
+        height: 19px;
+        top: 5px;
+        left: 26px;
+    }
+
+    .EFECTO SVG {
+        align-items: center;
+        text-align: center;
+    }
+
+    .EFECTO button {
+        background-color: #fff;
+    }
+
+.shadow-sm {
+    border: 2px solid #000000 !important;
+    border-radius: 24px;
+    width: 251px !important;
+}
+
+.bodyproducto {
+    margin-top: 5px !important;
+    border-block-start: inherit !important;
+}
+
+.botoncarrito {
+    border: solid #fff;
+    border-radius: 28px;
+    width: 68px;
+    height: 28px;
+}
+
+.shadow-sm img, svg {
+    border-radius: 25px;
+}
+
+.cantproducto {
+    border-radius: 25px;
+    border: 1px solid #AD0007;
+}
+
+.precio {
+    margin-bottom: 0px;
+}
+
+.row {
+    align-items: center;
+}
+
+.productos {
+    margin-left: 8%;
+    text-align: center;
+    justify-items: center;
+}
+.navbar-expand-sm .navbar-nav {
+    flex-direction: row-reverse;
+}
+.amarillo {
+    background-color:#ffd700;
+}
+
+.contenedor {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo {
+    color: #000000;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+header.Nosotros {
+    width: 100%;
+    height: 600px;
+    background: #FF4E50;
+    background: -webkit-linear-gradient(to right, #f9d4239b, #ff4e50ca), url(../img/fondo.jpg);
+    background: linear-gradient(to right, #f9d4239b, #ff4e50ca), url(../img/fondo.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    border-radius: 5%;
+}
+
+header .textos-header {
+    display: flex;
+    height: 550px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textos-header h1 {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.contenedor-sobre-nosotros {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imagen-about-us {
+    width: 48%;
+}
+
+.sobre-nosotros .contenido-textos {
+    width: 48%;
+}
+
+.contenido-textos h3 {
+    background: #ad0007;
+    color: floralwhite;
+    border-radius: 5%;
+    display: inline-block;
+    text-align: center;
+    width: 450px;
+    height: 40px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 #000000;
+}
+
+.contenido-textos p {
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.btn btn-warning {
+    position: center;
 }

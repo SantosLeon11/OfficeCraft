@@ -11,8 +11,6 @@ namespace OfficeCraft.Models.Entities
         [Required]
         public string Apellido { get; set; }
         [Required]
-        public string Direccion { get; set; }
-        [Required]
         public string Correo { get; set; }
     }
 }

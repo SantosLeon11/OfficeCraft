@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dapper;
+using Microsoft.EntityFrameworkCore;
 using OfficeCraft.Context;
 using OfficeCraft.Models.Entities;
 using OfficeCraft.Services.IService;
+using System.Data;
 
 namespace OfficeCraft.Services.Service
 {
@@ -19,9 +21,10 @@ namespace OfficeCraft.Services.Service
         {
             try
             {
-
                 return await _context.Roles.ToListAsync();
+                //var response = await _context.Database.GetDbConnection().QueryAsync<Rol>("sp_GetRoles", new { }, commandType: CommandType.StoredProcedure);
 
+                //return response.ToList();
             }
             catch (Exception ex)
             {

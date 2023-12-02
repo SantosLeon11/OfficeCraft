@@ -14,14 +14,11 @@ namespace OfficeCraft.Services.Service
         {
             _context = context;
         }
-
         public async Task<List<Pedido>> GetPedido()
         {
             try
             {
-
                 return await _context.Pedidos.Include(y => y.Clientes).Include(y => y.Productos).ToListAsync();
-
             }
             catch (Exception ex)
             {

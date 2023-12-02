@@ -53,7 +53,6 @@ namespace OfficeCraft.Services.Service
                 {
                     Nombre = i.Nombre,
                     Apellido = i.Apellido,
-                    Direccion = i.Direccion,
                     Correo = i.Correo,
                 };
 
@@ -76,7 +75,6 @@ namespace OfficeCraft.Services.Service
 
                 cliente.Nombre = i.Nombre;
                 cliente.Apellido = i.Apellido;
-                cliente.Direccion = i.Direccion;
                 cliente.Correo = i.Correo;
 
                 _context.Entry(cliente).State = EntityState.Modified;

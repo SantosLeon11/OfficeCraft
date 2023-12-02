@@ -21,7 +21,6 @@ namespace OfficeCraft.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Apellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Correo = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -107,18 +106,31 @@ namespace OfficeCraft.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Clientes",
+                columns: new[] { "PkCliente", "Apellido", "Correo", "Nombre" },
+                values: new object[,]
+                {
+                    { 1, "Sosa", "majo@gmail.com", "Maria" },
+                    { 2, "Madrazo", "gino@gmail.com", "Gino" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "PkRoles", "Nombre" },
                 values: new object[,]
                 {
                     { 1, "admin" },
-                    { 2, "sa" }
+                    { 2, "empleado" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "PKUsuario", "Apellido", "Contraseña", "FkRol", "Nombre", "NombreUsuario" },
-                values: new object[] { 1, "Sosa", "1234", 1, "Maria Jose", "Majo" });
+                values: new object[,]
+                {
+                    { 1, "Santos", "1234", 1, "Jorge", "joge" },
+                    { 2, "Peña", "1234", 2, "David", "davi" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pedidos_FkCliente",

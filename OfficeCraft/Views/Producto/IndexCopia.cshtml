@@ -1,23 +1,22 @@
 ﻿@model IEnumerable<OfficeCraft.Models.Entities.Producto>
 
 @{
-    Layout = "_LayoutDashboard";
+    Layout = "_LayoutDashboardCopia";
 }
 
 <h1>Gestion de productos</h1>
 
 <div class="row">
     <div class="offset-10 colborder-4 mb-4">
-        <a asp-action="Crear" asp-controller="Producto" class="btn btn-success"><i class="fa-solid fa-plus"></i> Nuevo</a>
+        <a asp-action="CrearCopia" asp-controller="Producto" class="btn btn-success"><i class="fa-solid fa-plus"></i> Nuevo</a>
     </div>
 </div>
 
 <div class="container-fluid">
     <div class="offset-12">
         <div class="card border">
-            <div class="card-header bg-dark">
+            <div class="card-header">
                 <h1 class="text-white"><strong>Lista de productos</strong></h1>
-
             </div>
 
             <div class="card-body">
@@ -48,7 +47,6 @@
                                         <td> @Html.DisplayFor(x => Item.Nombre )</td>
                                         <td> @Html.DisplayFor(x => Item.Precio )</td>
                                         <td> @Html.DisplayFor(x => Item.Existencia )</td>
-
                                     </tr>
                                 }
                             </tbody>

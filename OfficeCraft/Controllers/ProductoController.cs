@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using OfficeCraft.Context;
 using OfficeCraft.Models.Entities;
 using OfficeCraft.Services.IService;
 using OfficeCraft.Services.Service;
+using System.Data;
 
 namespace OfficeCraft.Controllers
 {
@@ -20,9 +23,8 @@ namespace OfficeCraft.Controllers
             try
             {
                 return View(await _productoServices.GetProducto());
-
-                /*var response = await _articuloServices.GetArticulos();
-                return View(response);*/
+                //var response = await _context.Database.GetDbConnection().QueryAsync<Producto>("SpGetArticulos", new { }, commandType: CommandType.StoredProcedure);
+                //return response.ToList();
             }
             catch (Exception ex)
             {
@@ -51,7 +53,6 @@ namespace OfficeCraft.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public IActionResult Crear(Producto request)
         {
@@ -66,6 +67,11 @@ namespace OfficeCraft.Controllers
 
                 throw new Exception("Error" + ex.Message);
             }
+        }
+        [HttpGet]
+        public IActionResult CrearCopia()
+        {
+            return View();
         }
 
         [HttpGet]

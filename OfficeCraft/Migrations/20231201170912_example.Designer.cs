@@ -12,7 +12,7 @@ using OfficeCraft.Context;
 namespace OfficeCraft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231201003731_example")]
+    [Migration("20231201170912_example")]
     partial class example
     {
         /// <inheritdoc />
@@ -41,10 +41,6 @@ namespace OfficeCraft.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Direccion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -52,6 +48,22 @@ namespace OfficeCraft.Migrations
                     b.HasKey("PkCliente");
 
                     b.ToTable("Clientes");
+
+                    b.HasData(
+                        new
+                        {
+                            PkCliente = 1,
+                            Apellido = "Sosa",
+                            Correo = "majo@gmail.com",
+                            Nombre = "Maria"
+                        },
+                        new
+                        {
+                            PkCliente = 2,
+                            Apellido = "Madrazo",
+                            Correo = "gino@gmail.com",
+                            Nombre = "Gino"
+                        });
                 });
 
             modelBuilder.Entity("OfficeCraft.Models.Entities.Pedido", b =>
@@ -135,7 +147,7 @@ namespace OfficeCraft.Migrations
                         new
                         {
                             PkRoles = 2,
-                            Nombre = "sa"
+                            Nombre = "empleado"
                         });
                 });
 
@@ -176,11 +188,20 @@ namespace OfficeCraft.Migrations
                         new
                         {
                             PKUsuario = 1,
-                            Apellido = "Sosa",
+                            Apellido = "Santos",
                             Contraseña = "1234",
                             FkRol = 1,
-                            Nombre = "Maria Jose",
-                            NombreUsuario = "Majo"
+                            Nombre = "Jorge",
+                            NombreUsuario = "joge"
+                        },
+                        new
+                        {
+                            PKUsuario = 2,
+                            Apellido = "Peña",
+                            Contraseña = "1234",
+                            FkRol = 2,
+                            Nombre = "David",
+                            NombreUsuario = "davi"
                         });
                 });
 

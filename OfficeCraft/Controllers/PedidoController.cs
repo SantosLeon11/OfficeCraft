@@ -39,7 +39,19 @@ namespace OfficeCraft.Controllers
                 throw new Exception("Succedio un error" + ex.Message);
             }
         }
-
+        [HttpGet]
+        public async Task<IActionResult> IndexCopia()
+        {
+            try
+            {
+                //Uso de la lista de los Usuario para que se muestre al abrir la vista
+                return View(await _pedidoServices.GetPedido());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Succedio un error" + ex.Message);
+            }
+        }
         [HttpGet]
         public IActionResult Crear()
         {
@@ -71,7 +83,21 @@ namespace OfficeCraft.Controllers
                 throw new Exception("Error" + ex.Message);
             }
         }
-
+        [HttpGet]
+        public IActionResult CrearCopia()
+        {
+            ViewBag.Clientes = _context.Clientes.Select(p => new SelectListItem()
+            {
+                Text = p.Nombre,
+                Value = p.PkCliente.ToString()
+            });
+            ViewBag.Productos = _context.Productos.Select(p => new SelectListItem()
+            {
+                Text = p.Nombre,
+                Value = p.PkProducto.ToString()
+            });
+            return View();
+        }
         [HttpGet]
         public async Task<IActionResult> Editar(int id)
         {

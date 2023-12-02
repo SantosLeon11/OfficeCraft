@@ -24,7 +24,10 @@ namespace OfficeCraft.Controllers
             var response = await _productoServices.GetProducto();
             return View(response);
         }
-    
+        public IActionResult Nosotros()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
