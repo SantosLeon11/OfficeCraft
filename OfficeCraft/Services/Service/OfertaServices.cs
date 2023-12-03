@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dapper;
+using Microsoft.EntityFrameworkCore;
 using OfficeCraft.Context;
 using OfficeCraft.Models.Entities;
 using OfficeCraft.Services.IService;
+using System.Data;
 
 namespace OfficeCraft.Services.Service
 {
@@ -19,9 +21,13 @@ namespace OfficeCraft.Services.Service
         {
             try
             {
-
+                int contador = 0;
+                for (int i = 0; i < 50; i++)
+                {
+                    contador++; // Incrementa el contador de uno en uno
+                    _context.Database.ExecuteSqlInterpolated($"EXEC CalcularTotalOferta {contador}");
+                }
                 return await _context.Ofertas.Include(y => y.Productos).ToListAsync();
-
             }
             catch (Exception ex)
             {
@@ -54,7 +60,6 @@ namespace OfficeCraft.Services.Service
                     Descuento = i.Descuento,
                     FkProducto = i.FkProducto,
                 };
-
                 var result = await _context.Ofertas.AddAsync(request);
                 _context.SaveChanges();
 

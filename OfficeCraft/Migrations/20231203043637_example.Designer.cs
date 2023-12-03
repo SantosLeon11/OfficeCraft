@@ -12,7 +12,7 @@ using OfficeCraft.Context;
 namespace OfficeCraft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231202045215_example")]
+    [Migration("20231203043637_example")]
     partial class example
     {
         /// <inheritdoc />
@@ -79,6 +79,9 @@ namespace OfficeCraft.Migrations
 
                     b.Property<int?>("FkProducto")
                         .HasColumnType("int");
+
+                    b.Property<float>("Total")
+                        .HasColumnType("real");
 
                     b.HasKey("PkOferta");
 

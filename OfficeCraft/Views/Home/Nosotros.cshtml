@@ -13,7 +13,9 @@
 
     <div class="wave" style="height: 150px; overflow: hidden;">
         <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path>
+        </svg>
+    </div>
 </header>
 <main>
     <section class="contenedor sobre-nosotros">
@@ -34,5 +36,10 @@
             </div>
         </div>
     </section>
-    <button type="button" class="btn btn-warning">Ingresar</button>
+    <div class="mapa">
+        <h2>Ubicación</h2>
+        <br />
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2821.7809767264876!2d-122.9904381239035!3d44.98876027107014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54bfff6eeffdae61%3A0xb0d6aee41e71f1!2sOFFICECRAFT%2C%20INC!5e0!3m2!1ses!2smx!4v1701576764123!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <a asp-action="Index" asp-controller="Home" type="button" class="btn btn-warning verprod">Ver productos</a>
 </main>

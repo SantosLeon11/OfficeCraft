@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using OfficeCraft.Context;
 using OfficeCraft.Models;
 using OfficeCraft.Services.IService;
+using OfficeCraft.Services.Service;
 using System.Diagnostics;
 
 namespace OfficeCraft.Controllers
@@ -11,12 +12,14 @@ namespace OfficeCraft.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductoServices _productoServices;
+        private readonly IOfertaServices _ofertaServices;
         private readonly ApplicationDbContext _context;
-        public HomeController(ILogger<HomeController> logger,IProductoServices productoServices, ApplicationDbContext context)
+        public HomeController(ILogger<HomeController> logger,IProductoServices productoServices, IOfertaServices ofertaServices, ApplicationDbContext context)
         {
             _logger = logger;
             _context = context;
             _productoServices= productoServices;
+            _ofertaServices = ofertaServices;
         }
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -27,6 +30,11 @@ namespace OfficeCraft.Controllers
         public IActionResult Nosotros()
         {
             return View();
+        }
+        public async Task<IActionResult> Ofertas()
+        {
+            var response = await _ofertaServices.GetOferta();
+            return View(response);
         }
 
         public IActionResult Privacy()

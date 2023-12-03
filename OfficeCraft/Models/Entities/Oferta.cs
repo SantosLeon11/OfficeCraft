@@ -8,6 +8,7 @@ namespace OfficeCraft.Models.Entities
         [Key]
         public int PkOferta { get; set; }
         public int Descuento { get; set; }
+        public float Total { get; set; }
 
         [ForeignKey("Productos")]
         public int? FkProducto { get; set; }

@@ -1,6 +1,6 @@
 ﻿@{
-    ViewData["Title"] = "Bienvenido a Officecraft asalariado";
-    Layout = "_LayoutDashboard";
+    ViewData["Title"] = "";
+    Layout = "_Layout";
 }
 <link href="~/img/FavIcon.ico" rel="shortcut icon" type="image/x-icon" />
 <link rel="stylesheet" href="globals.css" />
@@ -8,10 +8,10 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<div class="container">
+<div class="container-login">
 
     <div class="form-group mt-3">
-        <h2>Iniciar Sesion</h2>
+        <h1>Iniciar Sesion</h1>
 
         <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-5">
@@ -38,9 +38,6 @@
 
             var user = $("#user").val();
             var password = $("#password").val();
-
-            alert(user)
-            console.log(user)
 
             $.ajax({
                 url: "/Home/LoginUser",
