@@ -1,4 +1,5 @@
-﻿@model List<ShoppingCartItem>
+﻿@using OfficeCraft.Models.Entities;
+@model List<ShoppingCartItem>
 
 <h2>Carrito de Compras</h2>
 
@@ -6,21 +7,21 @@
     @foreach (var item in Model)
     {
         <li>
-            <img src="@item.Product.ImageUrl" alt="@item.Product.Name" width="50" height="50" />
-            @item.Product.Name - Precio: $@item.Product.Price - Cantidad: @item.Quantity
+            <img src="@item.Product.UrlImagenPath" alt="@item.Product.Nombre" width="50" height="50" />
+            @item.Product.Nombre - Precio: $@item.Product.Precio - Cantidad: @item.Quantity
 
             <form asp-controller="ShoppingCart" asp-action="RemoveFromCart" method="post">
-                <input type="hidden" name="productId" value="@item.Product.Id" />
+                <input type="hidden" name="productId" value="@item.Product.PkProducto" />
                 <button type="submit">Eliminar</button>
             </form>
         </li>
         <form asp-controller="ShoppingCart" asp-action="IncreaseQuantity" method="post">
-            <input type="hidden" name="productId" value="@item.Product.Id" />
+                <input type="hidden" name="productId" value="@item.Product.PkProducto" />
             <button type="submit">Aumentar Cantidad</button>
         </form>
 
         <form asp-controller="ShoppingCart" asp-action="DecreaseQuantity" method="post">
-            <input type="hidden" name="productId" value="@item.Product.Id" />
+                <input type="hidden" name="productId" value="@item.Product.PkProducto" />
             <button type="submit">Disminuir Cantidad</button>
         </form>
     }
