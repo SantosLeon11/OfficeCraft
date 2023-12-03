@@ -77,6 +77,9 @@ namespace OfficeCraft.Migrations
                     b.Property<int?>("FkProducto")
                         .HasColumnType("int");
 
+                    b.Property<float>("Total")
+                        .HasColumnType("real");
+
                     b.HasKey("PkOferta");
 
                     b.HasIndex("FkProducto");

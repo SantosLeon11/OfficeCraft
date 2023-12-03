@@ -64,6 +64,7 @@ namespace OfficeCraft.Migrations
                     PkOferta = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Descuento = table.Column<int>(type: "int", nullable: false),
+                    Total = table.Column<float>(type: "real", nullable: false),
                     FkProducto = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>

@@ -33,6 +33,7 @@
                                     <th> @Html.DisplayNameFor(x => x.Descuento)</th>
                                     <th> Nombre-Producto</th>
                                     <th> Precio-Producto</th>
+                                    <th> Precio-Con-Descuento</th>
 
                                     <th> Acciones</th>
                                 </tr>
@@ -49,6 +50,7 @@
                                         <td> @Html.DisplayFor(x => Item.Descuento)</td>
                                         <td> @Html.DisplayFor(x => Item.Productos.Nombre)</td>
                                         <td> @Html.DisplayFor(x => Item.Productos.Precio)</td>
+                                        <td> @Html.DisplayFor(x => Item.Total)</td>
 
                                         <td>
                                             <a class="btn btn-primary" asp-action="Editar" asp-route-id=@Item.PkOferta><i class="fa-regular fa-pen-to-square"></i> Editar</a>
