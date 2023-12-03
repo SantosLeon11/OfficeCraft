@@ -13,7 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Configuration.GetConnectionString("DefaultConnection")
 ));
 
-//Inyeccióm de dependencias
+//Inyecciï¿½m de dependencias
 
 builder.Services.AddTransient<IProductoServices, ProductoServices>();
 builder.Services.AddTransient<IPedidoServices, PedidoServices>();

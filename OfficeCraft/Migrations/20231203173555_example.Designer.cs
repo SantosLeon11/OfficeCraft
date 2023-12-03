@@ -12,7 +12,7 @@ using OfficeCraft.Context;
 namespace OfficeCraft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231203043637_example")]
+    [Migration("20231203173555_example")]
     partial class example
     {
         /// <inheritdoc />
