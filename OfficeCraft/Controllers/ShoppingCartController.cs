@@ -7,12 +7,13 @@ namespace OfficeCraft.Controllers
     {
         private List<ShoppingCartItem> ShoppingCart = new List<ShoppingCartItem>();
 
+        [HttpGet]
         // Acción para mostrar el carrito
         public ActionResult Index()
         {
             return View(ShoppingCart);
         }
-
+        [HttpPost]
         // Acción para agregar un producto al carrito
         public ActionResult AddToCart(Producto product)
         {

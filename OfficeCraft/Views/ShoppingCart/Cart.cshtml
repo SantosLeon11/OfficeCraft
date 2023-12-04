@@ -1,5 +1,6 @@
 ﻿@using OfficeCraft.Models.Entities;
-@model List<ShoppingCartItem>
+@*@model List<ShoppingCartItem>*@
+@model List<OfficeCraft.Models.Entities.ShoppingCartItem>
 
 <h2>Carrito de Compras</h2>
 
@@ -10,12 +11,12 @@
             <img src="@item.Product.UrlImagenPath" alt="@item.Product.Nombre" width="50" height="50" />
             @item.Product.Nombre - Precio: $@item.Product.Precio - Cantidad: @item.Quantity
 
-            <form asp-controller="ShoppingCart" asp-action="RemoveFromCart" method="post">
+            <form asp-controller="ShoppingCartItem" asp-action="RemoveFromCart" method="post">
                 <input type="hidden" name="productId" value="@item.Product.PkProducto" />
                 <button type="submit">Eliminar</button>
             </form>
         </li>
-        <form asp-controller="ShoppingCart" asp-action="IncreaseQuantity" method="post">
+        <form asp-controller="ShoppingCartItem" asp-action="IncreaseQuantity" method="post">
                 <input type="hidden" name="productId" value="@item.Product.PkProducto" />
             <button type="submit">Aumentar Cantidad</button>
         </form>
