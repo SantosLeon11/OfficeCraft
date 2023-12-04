@@ -1096,12 +1096,12 @@ body {
     left: 184px;
     object-fit: cover;
 }
-/* Media query para hacer ajustes específicos en pantallas más pequeñas */
+/* Media query para hacer ajustes especï¿½ficos en pantallas mï¿½s pequeï¿½as */
 @media only screen and (max-width: 768px) {
     .footer {
         padding: 10px;
     }
-    /* Ajustes adicionales según sea necesario para dispositivos más pequeños */
+    /* Ajustes adicionales segï¿½n sea necesario para dispositivos mï¿½s pequeï¿½os */
 }
 
 
@@ -1196,6 +1196,106 @@ body {
     text-align: center;
     margin-bottom: 60px;
 }
+
+/*Menu Incio*/
+.btn-menu {
+    float: left;
+    line-height: 70px;
+    margin-right: 15px;
+}
+
+    .btn-menu label {
+        color: #000000;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+.menu {
+    float: right;
+    line-height: 100px;
+}
+
+    .menu a {
+        display: inline-block;
+        padding: 15px;
+        line-height: normal;
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid transparent;
+        font-size: 15px;
+        margin-right: 15px;
+    }
+
+        .menu a:hover {
+            border-bottom: 2px solid #c7c7c7;
+            padding-bottom: 15px;
+        }
+
+/*MenÃ¹ lateral*/
+#btn-menu {
+    display: none;
+}
+
+.container-menu {
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-menu:checked ~ .container-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cont-menu {
+    width: 100%;
+    max-width: 250px;
+    background: #FFD700;
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+}
+
+#btn-menu:checked ~ .container-menu .cont-menu {
+    transform: translateX(0%);
+}
+
+.cont-menu nav {
+    transform: translateY(15%);
+}
+
+    .cont-menu nav a {
+        display: block;
+        text-decoration: none;
+        padding: 20px;
+        color: #ffd700;
+        border-left: 5px solid transparent;
+        transition: all 400ms ease;
+    }
+
+        .cont-menu nav a:hover {
+            border-left: 5px solid #ad0007;
+            background: #ffd700;
+        }
+
+.cont-menu label {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #ad0007;
+    cursor: pointer;
+    font-size: 18px;
+}
+/*Fin de MenÃ¹ lateral*/
+/*Menu Final*/
 
 header.Nosotros {
     width: 100%;

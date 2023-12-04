@@ -25,7 +25,7 @@ namespace OfficeCraft.Services.Service
                 for (int i = 0; i < 50; i++)
                 {
                     contador++; // Incrementa el contador de uno en uno
-                    _context.Database.ExecuteSqlInterpolated($"EXEC CalcularTotalOferta {contador}");
+                    _context.Database.ExecuteSqlInterpolated($"EXEC sp_ProductoConDescuento {contador}");
                 }
                 return await _context.Ofertas.Include(y => y.Productos).ToListAsync();
             }
