@@ -28,7 +28,6 @@ namespace OfficeCraft.Controllers
             try
             {
                 //Uso de la lista de los Usuario para que se muestre al abrir la vista
-
                 return View(await _pedidoServices.GetPedido());
 
                 /*var response = await _articuloServices.GetArticulos();

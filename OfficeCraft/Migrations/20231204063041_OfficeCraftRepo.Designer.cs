@@ -12,8 +12,8 @@ using OfficeCraft.Context;
 namespace OfficeCraft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231203223340_example")]
-    partial class example
+    [Migration("20231204063041_OfficeCraftRepo")]
+    partial class OfficeCraftRepo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

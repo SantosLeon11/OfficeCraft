@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace OfficeCraft.Migrations
 {
     /// <inheritdoc />
-    public partial class example : Migration
+    public partial class OfficeCraftRepo : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

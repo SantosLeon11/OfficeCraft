@@ -18,12 +18,12 @@ namespace OfficeCraft.Services.Service
         {
             try
             {
-                int contador = 0;
-                for (int i = 0; i < 50; i++)
-                {
-                    contador++; // Incrementa el contador de uno en uno
-                    _context.Database.ExecuteSqlInterpolated($"EXEC sp_DescontarExistencia {contador}");
-                }
+                //int contador = 0;
+                //for (int i = 0; i < 50; i++)
+                //{
+                //    contador++; // Incrementa el contador de uno en uno
+                //    _context.Database.ExecuteSqlInterpolated($"EXEC sp_DescontarExistencia {contador}");
+                //}
                 return await _context.Pedidos.Include(y => y.Clientes).Include(y => y.Productos).ToListAsync();
             }
             catch (Exception ex)
@@ -63,6 +63,10 @@ namespace OfficeCraft.Services.Service
                 var result = await _context.Pedidos.AddAsync(request);
                 await _context.SaveChangesAsync();
 
+                // Actualizar la existencia del producto
+                await ActualizarExistenciaProducto(request.FkProducto.Value, request.Cantidad);
+
+
                 return request;
             }
             catch (Exception ex)
@@ -91,6 +95,23 @@ namespace OfficeCraft.Services.Service
             catch (Exception ex)
             {
                 throw new Exception("Succedio un error " + ex.Message);
+            }
+        }
+        public async Task ActualizarExistenciaProducto(int productoId, int cantidad)
+        {
+            try
+            {
+                var producto = await _context.Productos.FindAsync(productoId);
+                if (producto != null)
+                {
+                    producto.Existencia -= cantidad;
+                    _context.Entry(producto).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Surgió un error al actualizar la existencia del producto: " + ex.Message);
             }
         }
         public bool EliminarPedido(int id)

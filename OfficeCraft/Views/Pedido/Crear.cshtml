@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="col-sm-8">
         <div class="card border">
-            <div class="card-header bg-dark">
+            <div class="card-header">
                 <h1 class="text-white"><strong>Crear pedido</strong></h1>
 
             </div>
@@ -13,6 +13,9 @@
             <div class="card-body">
 
                 <form asp-action="Crear" method="post">
+                    
+                    <!-- Agrega un campo oculto para almacenar el ID del producto seleccionado -->
+                    <input type="hidden" id="hiddenProductId" name="ProductoId" />
 
                     <div class="form-group">
                         <label asp-for="Cantidad" class="control-label"></label>
@@ -47,3 +50,14 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#FkProducto").change(function () {
+                var selectedProductId = $(this).val();
+                $("#hiddenProductId").val(selectedProductId); // Set hidden input value to selected product ID
+            });
+        });
+    </script>
+}
