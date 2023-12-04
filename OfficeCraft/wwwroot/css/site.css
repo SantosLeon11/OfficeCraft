@@ -1205,7 +1205,7 @@ body {
 }
 
     .btn-menu label {
-        color: #fff;
+        color: #000000;
         font-size: 30px;
         cursor: pointer;
     }
@@ -1257,7 +1257,7 @@ body {
 .cont-menu {
     width: 100%;
     max-width: 250px;
-    background: #fcff00;
+    background: #FFD700;
     height: 100vh;
     position: relative;
     transition: all 500ms ease;

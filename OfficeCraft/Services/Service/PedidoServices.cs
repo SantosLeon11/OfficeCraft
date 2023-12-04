@@ -18,6 +18,12 @@ namespace OfficeCraft.Services.Service
         {
             try
             {
+                int contador = 0;
+                for (int i = 0; i < 50; i++)
+                {
+                    contador++; // Incrementa el contador de uno en uno
+                    _context.Database.ExecuteSqlInterpolated($"EXEC sp_DescontarExistencia {contador}");
+                }
                 return await _context.Pedidos.Include(y => y.Clientes).Include(y => y.Productos).ToListAsync();
             }
             catch (Exception ex)
@@ -72,7 +78,7 @@ namespace OfficeCraft.Services.Service
                 Pedido pedido = _context.Pedidos.Find(i.PkPedido);
 
                 pedido.Cantidad = i.Cantidad;
-                pedido.FechaPedido = DateTime.Now;
+                pedido.FechaPedido = i.FechaPedido;
                 pedido.FkCliente = i.FkCliente;
                 pedido.FkProducto = i.FkProducto;
 
